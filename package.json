@@ -4,8 +4,64 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "bootstrap": "shx rm -rf dist && shx mkdir dist",
+    "start": "npm run build && run-p watch:**",
+    "build": "run-s bootstrap build:**",
+    "build:client": "run-s build-client:**",
+    "build-client:js": "webpack --config webpack.config.js --display-error-details --colors",
+    "build-client:scss": "node-sass scss/main.scss dist/css/main.css",
+    "build-client:prefix:main": "postcss --use autoprefixer -o dist/css/main.css dist/css/main.css",
+    "build-client:static": "run-s copy:**",
+    "copy:styling-dependency": "run-s bootstrap:clean bootstrap:prefix",
+    "bootstrap:clean": "shx cp -r node_modules/mofo-bootstrap/dest/css dist",
+    "bootstrap:prefix": "postcss --use autoprefixer -o dist/css/mofo-bootstrap.css dist/css/mofo-bootstrap.css",
+    "copy:index": "shx cp index.html dist/index.html",
+    "watch:css": "chokidar 'components/**/*.scss' 'pages/**/*.scss' 'scss/**/*.scss' -c 'npm run build-client:scss'",
+    "watch:html": "chokidar 'index.html' -c 'npm run build-client:static'",
+    "watch:js": "chokidar 'main.jsx' 'routes.jsx' 'js/**/*.js' 'components/**/*.jsx' 'pages/**/*.jsx' 'webpack.config.js' -c 'npm run build-client:js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmmavis/to-be-named.git"
+  },
   "author": "Mavis Ou (https://github.com/mmmavis)",
-  "license": "MPL-2.0"
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "chokidar": "^1.7.0",
+    "chokidar-cli": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "postcss-cli-simple": "^1.0.4",
+    "shx": "^0.2.2"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "mofo-bootstrap": "^4.0.1",
+    "npm-run-all": "^4.1.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-ga": "^2.2.0",
+    "react-helmet": "^5.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "webpack": "^3.6.0"
+  },
+  "engines": {
+    "node": "^8.4.0",
+    "npm": "^5.4.0"
+  }
 }
