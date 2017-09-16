@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "bootstrap": "shx rm -rf dist && shx mkdir dist",
-    "start": "npm run build && run-p watch:**",
+    "start": "npm run build && run-p server watch:**",
+    "server": "webpack-dev-server",
     "build": "run-s bootstrap build:**",
     "build:client": "run-s build-client:**",
     "build-client:js": "webpack --config webpack.config.js --display-error-details --colors",
@@ -43,7 +44,8 @@
     "chokidar-cli": "^1.2.0",
     "node-sass": "^4.5.3",
     "postcss-cli-simple": "^1.0.4",
-    "shx": "^0.2.2"
+    "shx": "^0.2.2",
+    "webpack-dev-server": "^2.8.2"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -56,7 +58,6 @@
     "react-dom": "^15.6.1",
     "react-ga": "^2.2.0",
     "react-helmet": "^5.2.0",
-    "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "webpack": "^3.6.0"
   },

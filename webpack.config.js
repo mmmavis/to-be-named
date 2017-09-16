@@ -1,4 +1,5 @@
-var webpack = require(`webpack`);
+var webpack = require('webpack');
+var path = require('path');
 
 var plugins = [];
 
@@ -33,5 +34,10 @@ module.exports = {
       }
     ]
   },
-  plugins: plugins
+  plugins: plugins,
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 8888
+  }
 };
