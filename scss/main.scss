@@ -1,1 +1,116 @@
+@import '../node_modules/mofo-bootstrap/src/scss/custom/colors';
+@import './colors.scss';
+@import '../node_modules/bootstrap/scss/variables.scss';
+@import '../node_modules/mofo-bootstrap/src/scss/overrides/variables.scss';
+@import './overrides/variables.scss';
+@import '../node_modules/bootstrap/scss/mixins';
+@import '../node_modules/mofo-bootstrap/src/scss/overrides/mixins.scss';
+@import '../node_modules/bootstrap/scss/buttons.scss';
 
+
+a {
+  color: $link-color;
+
+  @include hover {
+    color: $link-hover-color;
+  }
+}
+
+.open-sans {
+  font-family: 'Open Sans', X-LocaleSpecific, sans-serif;
+}
+
+.nav-bar {
+  background: $black;
+}
+
+.nav-link {
+  color: $white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+
+  &.active {
+    color: $black;
+    background: $white;
+  }
+  @include hover-focus {
+    background: opacify($white, 0.5);
+  }
+
+}
+
+.timeblock-link {
+  color: $black;
+  background: $gray-lightest;
+  font-size: 2rem;
+  letter-spacing: 3px;
+
+  @include hover-focus {
+    color: $white;
+    background: $black;
+    text-decoration: none;
+  }
+}
+
+.session-card {
+  position: relative;
+  background: $gray-lightest;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 10px;
+    height: 100%;
+  }
+
+  &[data-space='Dilemmas in connected spaces'] {
+    &::before {
+      background: pink;
+    }
+  }
+
+  &[data-space='Journalism'] {
+    &::before {
+      background: LightGreen;
+    }
+  }
+
+  &[data-space='Open science'] {
+    &::before {
+      background: DodgerBlue;
+    }
+  }
+
+  &[data-space='Youth zone'] {
+    &::before {
+      background: Gold;
+    }
+  }
+
+  &[data-space='Open badges'] {
+    &::before {
+      background: MediumPurple;
+    }
+  }
+
+  &[data-space='Fuel The Movement'] {
+    &::before {
+      background: teal;
+    }
+  }
+
+  &[data-space='Localisation'] {
+    &::before {
+      background: DarkViolet;
+    }
+  }
+
+  &[data-space='MozEx'] {
+    &::before {
+      background: Salmon;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+// spacing
+
+$form-field-vertical-margin: 30px;
+
+// colors
+
+$form-text-light: #8d8d8d;
+$form-error-color: #d24735;
+
+// mofo-bootstrap overrides
+
+$body-color: $gray-darker;
+$link-color: darken($mozfest-blue, 15%);
+$link-hover-color: lighten($mozfest-blue, 15%);
+$font-weight-normal: normal;

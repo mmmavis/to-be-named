@@ -19,7 +19,7 @@
     "copy:index": "shx cp index.html dist/index.html",
     "watch:css": "chokidar 'components/**/*.scss' 'pages/**/*.scss' 'scss/**/*.scss' -c 'npm run build-client:scss'",
     "watch:html": "chokidar 'index.html' -c 'npm run build-client:static'",
-    "watch:js": "chokidar 'main.jsx' 'routes.jsx' 'js/**/*.js' 'components/**/*.jsx' 'pages/**/*.jsx' 'webpack.config.js' -c 'npm run build-client:js'",
+    "watch:js": "chokidar 'main.jsx' 'routes.jsx' 'js/**/*.js' 'components/**/*.jsx' 'pages/**/*.jsx' 'data/**/*.json' 'webpack.config.js' -c 'npm run build-client:js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "babel": {
@@ -52,6 +52,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.5",
     "mofo-bootstrap": "^4.0.1",
     "npm-run-all": "^4.1.1",
     "react": "^15.6.1",
