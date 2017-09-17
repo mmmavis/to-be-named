@@ -16,7 +16,7 @@ class TimeblockSchedule extends React.Component {
               <Helmet><title>{`Saturday ${this.props.timeblock[`start time`]}`}</title></Helmet>
             </div>
             <div className="col-12">
-              <div className="my-4">Timeblock: <span>{this.props.timeblock.key}</span></div>
+              <div className="mb-3">Timeblock: <span>{this.props.timeblock.key}</span></div>
               {this.renderSessions()}
             </div>
           </div>;

@@ -7,6 +7,9 @@
 @import '../node_modules/mofo-bootstrap/src/scss/overrides/mixins.scss';
 @import '../node_modules/bootstrap/scss/buttons.scss';
 
+body {
+  line-height: 1.2;
+}
 
 a {
   color: $link-color;
@@ -126,5 +129,42 @@ a {
     }
   }
 
+  .content {
+    padding-right: 40px;
+  }
 
+  .expandable-section {
+    display: none;
+    border-top: 2px solid $gray;
+  }
+
+  &.expanded {
+    .expandable-section {
+      display: block;
+    }
+  }
+
+  .expand-toggle {
+    position: relative;
+    top: 10px;
+  }
+
+  .action-panel {
+    position: absolute;
+    top: 1rem;
+    right: .5rem;
+    font-size: 1.2rem;
+
+    a {
+      margin-bottom: 0.5rem;
+
+      .fa-heart-o {
+        color: HotPink;
+      }
+
+      .fa-twitter {
+        color: #0084b4;
+      }
+    }
+  }
 }
