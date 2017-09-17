@@ -14,7 +14,7 @@ class Nav extends React.Component {
   render() {
     let navItemClassnames = `nav-item mb-0`;
 
-    return <div className="nav-bar">
+    return <div className="nav-bar mb-4">
             <div className="container">
               <div className="row justify-content-center">
                 <div>

@@ -66,51 +66,65 @@ a {
     height: 100%;
   }
 
-  &[data-space='Dilemmas in connected spaces'] {
+  &[data-space='demystify the web'] {
     &::before {
-      background: pink;
+      background: DeepSkyBlue;
     }
   }
 
-  &[data-space='Journalism'] {
+  &[data-space='digital arts and culture'] {
     &::before {
-      background: LightGreen;
+      background: Peru;
     }
   }
 
-  &[data-space='Open science'] {
+  &[data-space='dilemmas in connected spaces'] {
     &::before {
-      background: DodgerBlue;
+      background: Thistle;
     }
   }
 
-  &[data-space='Youth zone'] {
-    &::before {
-      background: Gold;
-    }
-  }
-
-  &[data-space='Open badges'] {
-    &::before {
-      background: MediumPurple;
-    }
-  }
-
-  &[data-space='Fuel The Movement'] {
+  &[data-space='fuel the movement'] {
     &::before {
       background: teal;
     }
   }
 
-  &[data-space='Localisation'] {
+  &[data-space='journalism'] {
+    &::before {
+      background: LightGreen;
+    }
+  }
+
+  &[data-space='localisation'] {
     &::before {
       background: DarkViolet;
     }
   }
 
-  &[data-space='MozEx'] {
+  &[data-space='mozex'] {
     &::before {
       background: Salmon;
     }
   }
+
+  &[data-space='open science'] {
+    &::before {
+      background: DodgerBlue;
+    }
+  }
+
+  &[data-space='open badges'] {
+    &::before {
+      background: MediumPurple;
+    }
+  }
+
+  &[data-space='youth zone'] {
+    &::before {
+      background: Gold;
+    }
+  }
+
+
 }

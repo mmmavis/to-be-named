@@ -22,7 +22,7 @@ class DaySchedule extends React.Component {
       </div>;
     });
 
-    return <div className="row justify-content-center text-center mt-4">{timeblocks}</div>
+    return <div className="row justify-content-center text-center">{timeblocks}</div>
   }
 
   render() {

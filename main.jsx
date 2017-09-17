@@ -10,6 +10,7 @@ import Nav from './components/nav.jsx';
 import Home from './pages/home.jsx';
 import DaySchedule from './pages/day-schedule.jsx';
 import TimeblockSchedule from './pages/timeblock-schedule.jsx';
+import Session from './pages/session.jsx';
 
 Analytics.initialize();
 
@@ -48,6 +49,12 @@ function generateScheduleRoutes(day) {
   ].concat(generateTimeRoutes(day, timeblocks))
 }
 
+function getSessionDetail(id) {
+  return sessionsData.sessions.filter(session => {
+    return session.id === id;
+  })[0];
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -67,6 +74,9 @@ class App extends React.Component {
                     { generateScheduleRoutes(`Friday`) }
                     { generateScheduleRoutes(`Saturday`) }
                     { generateScheduleRoutes(`Sunday`) }
+                    <Route 
+                      path="/session/:id" 
+                      component={(props) => <Session {...getSessionDetail(props.match.params.id)} /> } />
                   </Switch>
                 </div>
               </div>
